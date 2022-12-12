@@ -7,7 +7,7 @@
             number = ++lastNumber + "";
         }
 
-        public static int lastNumber = 0;
+        private static int lastNumber = 0;
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public Gender Gender { get; set; }
@@ -19,6 +19,34 @@
             get
             {
                 return "C" + number.PadLeft(9, '0');
+            }
+        }
+
+        public List<Compte> CompteList { get; set; } = new List<Compte>();
+
+        public void AddCompte(Compte compte)
+        {
+            if (!CompteList.Contains(compte))
+            {
+                CompteList.Add(compte);
+            }
+            if (compte.Titulaire != this)
+            {
+                compte.Titulaire = this;
+            }
+
+
+        }
+
+        public void RemoveCompte(Compte compte)
+        {
+            if (CompteList.Contains(compte))
+            {
+                CompteList.Remove(compte);
+            }
+            if (compte.Titulaire == this)
+            {
+                compte.Titulaire = null;
             }
         }
 

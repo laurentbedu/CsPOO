@@ -52,59 +52,91 @@ namespace CsPOO
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Compte cpt1 = new Compte();
-            //Compte cpt2 = new Compte("Bédu Laurent");
-            Compte cpt2 = new Compte() { Titulaire = "Bédu Laurent" };
-            //Compte cpt3 = new Compte("John Doe", "$");
-            Compte cpt3 = new Compte() { Titulaire = "John Doe", Devise = "$" };
+            //Compte cpt1 = new Compte();
+            ////Compte cpt2 = new Compte("Bédu Laurent");
+            //Compte cpt2 = new Compte() { Titulaire = "Bédu Laurent" };
+            ////Compte cpt3 = new Compte("John Doe", "$");
+            //Compte cpt3 = new Compte() { Titulaire = "John Doe", Devise = "$" };
 
-            cpt2.Crediter(100);
-            cpt2.Debiter(50);
+            //cpt2.Crediter(100);
+            //cpt2.Debiter(50);
 
-            bool stop = true;
+            //bool stop = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int nb1 = 1;
-            int nb2 = 2;
-            nb2 = nb1;
-            nb1 = 5;
+            //int nb1 = 1;
+            //int nb2 = 2;
+            //nb2 = nb1;
+            //nb1 = 5;
 
 
-            Compte cpt2 = new Compte() { Titulaire = "Bédu Laurent" };
-            Compte cpt2save = cpt2;
-            Compte cpt3 = new Compte() { Titulaire = "John Doe" };
-            cpt2 = cpt3;
-            cpt3.Solde = 100;
-            bool stop = true;
+            //Compte cpt2 = new Compte() { Titulaire = "Bédu Laurent" };
+            //Compte cpt2save = cpt2;
+            //Compte cpt3 = new Compte() { Titulaire = "John Doe" };
+            //cpt2 = cpt3;
+            //cpt3.Solde = 100;
+            //bool stop = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Compte cptA = new Compte() { Titulaire = "John Doe" };
-            Compte cptB = new Compte() { Titulaire = "John Doe" };
+            //Compte cptA = new Compte() { Titulaire = "John Doe" };
+            //Compte cptB = new Compte() { Titulaire = "John Doe" };
 
-            bool cptAaqualsCptB = (cptA == cptB);
-            bool cptAequalsCptB = cptA.Equals(cptB);
+            //bool cptAaqualsCptB = (cptA == cptB);
+            //bool cptAequalsCptB = cptA.Equals(cptB);
 
-            cptA = cptB;
-            cptAaqualsCptB = (cptA == cptB);
+            //cptA = cptB;
+            //cptAaqualsCptB = (cptA == cptB);
 
-            string cptAStr = cptA.ToString();
+            //string cptAStr = cptA.ToString();
 
-            bool stop = true;
+            //bool stop = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Client cl1 = new Client() { Firstname = "laurEnt", Lastname = "bédu", Gender = Gender.Mr };
-            Client cl2 = new Client() { Firstname = "jane", Lastname = "dOe", Gender = Gender.Mme };
-            //cl2.Number = "";
-            Debug.WriteLine(cl1);
-            Debug.WriteLine(cl2);
+            //Client cl1 = new Client() { Firstname = "laurEnt", Lastname = "bédu", Gender = Gender.Mr };
+            //Client cl2 = new Client() { Firstname = "jane", Lastname = "dOe", Gender = Gender.Mme };
+            ////cl2.Number = "";
+            //Debug.WriteLine(cl1);
+            //Debug.WriteLine(cl2);
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Client laurent = new Client() { Firstname = "Laurent", Lastname = "BEDU", Gender = Gender.Mr };
+            Compte cpt1 = new Compte() { Titulaire = laurent };
+
+        }
+
+        Client client;
+        private void button6_Click(object sender, EventArgs e)
+        {
+            client = new Client() { Lastname = "MOI", Firstname = "même" };
+            textBoxClient.Text = client.ToString();
+        }
+
+        Compte compte;
+        private void button7_Click(object sender, EventArgs e)
+        {
+            compte = new Compte() { Solde = 10 };
+            textBoxCompte.Text = compte.ToString();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            client.AddCompte(compte);
+            bool stop = true;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            client.RemoveCompte(compte);
+            bool stop = true;
+        }
     }
 
     public enum Elapsed

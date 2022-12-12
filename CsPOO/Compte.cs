@@ -2,10 +2,12 @@
 {
     internal class Compte
     {
-        //public Compte()
-        //{
-        //    bool stop = true;
-        //}
+        public Compte()
+        {
+            number = ++lastNumber + "";
+        }
+
+        private static int lastNumber = 0;
         //public Compte(string titulaire)
         //{
         //    this.titulaire = titulaire;
@@ -29,8 +31,17 @@
             set { agence = value; }
         }
 
+        public string number;
+        public string Number
+        {
+            get
+            {
+                return "CPT" + number.PadLeft(9, '0');
+            }
+        }
 
-        public string Titulaire { get; set; } = "";
+
+        public Client? Titulaire { get; set; }
         public string Devise { get; set; } = "€";
         public double Solde { get; set; }
 
@@ -47,13 +58,13 @@
 
         public override string ToString()
         {
-            return Titulaire + " (" + Solde + Devise + ")";
+            return Number + " (" + Solde + Devise + ")";
         }
 
-        public bool Equals(Compte obj)
-        {
-            return Titulaire == obj.Titulaire;
-        }
+        //public bool Equals(Compte obj)
+        //{
+        //    return Titulaire == obj.Titulaire;
+        //}
 
 
     }
