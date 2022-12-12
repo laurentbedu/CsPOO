@@ -14,7 +14,13 @@
         public DateTime Birthdate { get; set; }
 
         public string number;
-        public string Number { get { return "C" + number.PadLeft(9, '0'); } }
+        public string Number
+        {
+            get
+            {
+                return "C" + number.PadLeft(9, '0');
+            }
+        }
 
         public override string ToString()
         {

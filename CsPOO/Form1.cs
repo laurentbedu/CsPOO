@@ -100,6 +100,7 @@ namespace CsPOO
         {
             Client cl1 = new Client() { Firstname = "laurEnt", Lastname = "bédu", Gender = Gender.Mr };
             Client cl2 = new Client() { Firstname = "jane", Lastname = "dOe", Gender = Gender.Mme };
+            //cl2.Number = "";
             Debug.WriteLine(cl1);
             Debug.WriteLine(cl2);
         }
