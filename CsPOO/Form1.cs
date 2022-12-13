@@ -107,8 +107,8 @@ namespace CsPOO
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Client laurent = new Client() { Firstname = "Laurent", Lastname = "BEDU", Gender = Gender.Mr };
-            Compte cpt1 = new Compte() { Titulaire = laurent };
+            //Client laurent = new Client() { Firstname = "Laurent", Lastname = "BEDU", Gender = Gender.Mr };
+            //Compte cpt1 = new Compte() { Titulaire = laurent };
 
         }
 
@@ -122,8 +122,8 @@ namespace CsPOO
         Compte compte;
         private void button7_Click(object sender, EventArgs e)
         {
-            compte = new Compte() { Solde = 10 };
-            textBoxCompte.Text = compte.ToString();
+            //compte = new Compte() { Solde = 10 };
+            //textBoxCompte.Text = compte.ToString();
         }
 
         private void button8_Click(object sender, EventArgs e)

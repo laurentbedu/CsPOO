@@ -1,13 +1,13 @@
 ﻿namespace CsPOO
 {
-    internal class Compte
+    internal abstract class Compte
     {
         public Compte()
         {
             number = ++lastNumber + "";
         }
 
-        private static int lastNumber = 0;
+
         //public Compte(string titulaire)
         //{
         //    this.titulaire = titulaire;
@@ -24,13 +24,16 @@
         //string devise = "€";
         //double solde;
 
-        private string agence = "";
-        public string Agence
-        {
-            get { return agence; }
-            set { agence = value; }
-        }
+        //private string agence = "";
+        //public string Agence
+        //{
+        //    get { return agence; }
+        //    set { agence = value; }
+        //}
+        public abstract void AbstractMethod();
 
+
+        private static int lastNumber = 0;
         public string number;
         public string Number
         {
@@ -40,8 +43,20 @@
             }
         }
 
-
-        public Client? Titulaire { get; set; }
+        private Client? titulaire;
+        public Client? Titulaire
+        {
+            get => titulaire;
+            set
+            {
+                if (titulaire != value)
+                {
+                    titulaire?.RemoveCompte(this);
+                    titulaire = value;
+                    titulaire?.AddCompte(this);
+                }
+            }
+        }
         public string Devise { get; set; } = "€";
         public double Solde { get; set; }
 
@@ -51,9 +66,12 @@
             Solde += amount;
         }
 
-        public void Debiter(double amount)
+        public virtual void Debiter(double amount)
         {
-            Solde -= amount;
+            if (Solde - amount >= 0)
+            {
+                Solde -= amount;
+            }
         }
 
         public override string ToString()

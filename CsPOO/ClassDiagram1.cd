@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CsPOO.Compte">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAgAAAAIAQAAEAEAAAAgAACAAAAQAAAAAAAQEAAA=</HashCode>
+      <FileName>Compte.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CsPOO.CompteCourant">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <InheritanceLine Type="CsPOO.Compte" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="5.562" Y="6.238" />
+        <Point X="5.562" Y="6.613" />
+        <Point X="7.125" Y="6.613" />
+        <Point X="7.125" Y="5.438" />
+        <Point X="7.5" Y="5.438" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAA=</HashCode>
+      <FileName>CompteCourant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CsPOO.CompteEpargne">
+    <Position X="7.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAQAAAIAAQQAAAA=</HashCode>
+      <FileName>CompteEpargne.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CsPOO.Client">
+    <Position X="0.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAIAAQACMAEAQAAQAAACAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Client.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CsPOO.Category" Collapsed="true">
+    <Position X="2.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAEAAAoQAAAAAEAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CsPOO.Product" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEQAAAgAEAAAAAAAAAAAAAAAAAAAIAAAACAA=</HashCode>
+      <FileName>Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="CsPOO.Gender" Collapsed="true">
+    <Position X="1.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAQAA=</HashCode>
+      <FileName>Client.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

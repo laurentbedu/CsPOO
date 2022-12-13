@@ -1,4 +1,6 @@
-﻿namespace CsPOO
+﻿using System.Diagnostics;
+
+namespace CsPOO
 {
     public partial class Form2 : Form
     {
@@ -26,6 +28,27 @@
             prod3.Category = cat1;
             stop = true;
 
+            Debug.WriteLine(cat1.ProductListToString());
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CompteCourant cptCourant = new CompteCourant() { Solde = 0, DecouvertMax = 100 };
+            cptCourant.Debiter(50);
+            cptCourant.Debiter(200);
+
+            CompteEpargne compteEpargne = new CompteEpargne() { Solde = 100, TxInterest = 2, isBlocked = false };
+            compteEpargne.AddInterests(100);
+            compteEpargne.Debiter(50);
+            compteEpargne.Debiter(100);
+
+
+            Client client = new Client();
+            client.AddCompte(cptCourant);
+            client.AddCompte(compteEpargne);
+            bool stop = true;
 
         }
     }

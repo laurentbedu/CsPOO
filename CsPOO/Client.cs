@@ -40,13 +40,13 @@
 
         public void RemoveCompte(Compte compte)
         {
-            if (CompteList.Contains(compte))
+            if (compte != null && CompteList.Contains(compte))
             {
                 CompteList.Remove(compte);
-            }
-            if (compte.Titulaire == this)
-            {
-                compte.Titulaire = null;
+                if (compte.Titulaire == this)
+                {
+                    compte.Titulaire = null;
+                }
             }
         }
 
@@ -58,6 +58,7 @@
                 + Number + ")";
 
         }
+
 
     }
 
