@@ -22,7 +22,7 @@
             }
         }
 
-        public List<Compte> CompteList { get; set; } = new List<Compte>();
+        public List<Compte> CompteList { get; } = new List<Compte>();
 
         public void AddCompte(Compte compte)
         {
