@@ -1,6 +1,6 @@
 ﻿namespace CsPOO
 {
-    internal abstract class Compte
+    internal abstract class Compte : IClonable<Compte>
     {
         public Compte()
         {
@@ -77,6 +77,11 @@
         public override string ToString()
         {
             return Number + " (" + Solde + Devise + ")";
+        }
+
+        public Compte Clone(Compte other)
+        {
+            throw new NotImplementedException();
         }
 
         //public bool Equals(Compte obj)

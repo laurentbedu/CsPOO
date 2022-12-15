@@ -51,5 +51,22 @@ namespace CsPOO
             bool stop = true;
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ConsoleReader consoleReader = new ConsoleReader();
+            FileReader fileReader = new FileReader() { Filename = "C:\\Temp\\test.txt" };
+
+            List<IReadable> readableList = new List<IReadable>()
+            {
+                consoleReader,
+                fileReader
+            };
+
+            foreach (var reader in readableList)
+            {
+                Console.WriteLine(reader.Read());
+            }
+        }
     }
 }

@@ -1,10 +1,12 @@
 ﻿namespace CsPOO
 {
-    internal class Client
+    internal class Client : IEquatable<Client>, IClonable<Client>
     {
+
         public Client()
         {
             number = ++lastNumber + "";
+
         }
 
         private static int lastNumber = 0;
@@ -13,7 +15,7 @@
         public Gender Gender { get; set; }
         public DateTime Birthdate { get; set; }
 
-        public string number;
+        private string number;
         public string Number
         {
             get
@@ -22,7 +24,7 @@
             }
         }
 
-        public List<Compte> CompteList { get; } = new List<Compte>();
+        public List<Compte> CompteList { get; private set; } = new List<Compte>();
 
         public void AddCompte(Compte compte)
         {
@@ -34,7 +36,6 @@
             {
                 compte.Titulaire = this;
             }
-
 
         }
 
@@ -59,7 +60,15 @@
 
         }
 
+        public bool Equals(Client? other)
+        {
+            return Number == other.Number;
+        }
 
+        public Client Clone(Client other)
+        {
+            return new Client() { Birthdate = Birthdate, CompteList = CompteList, Firstname = Firstname };
+        }
     }
 
     public enum Gender
